@@ -5,8 +5,10 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -24,6 +26,13 @@ public class BaseTest {
 
 		case "chrome":
 			driver = new ChromeDriver();
+			tDriver.set(driver);
+			break;
+		case "chrome_headless":
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("headless");
+			driver = new ChromeDriver(options);
+			driver.manage().window().setSize(new Dimension(1440, 900));
 			tDriver.set(driver);
 			break;
 		case "firefox":

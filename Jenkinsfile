@@ -11,7 +11,7 @@ pipeline {
 
          choice(
             name: 'Browser', 
-            choices: ['chrome', 'edge','firefox','safari'], 
+            choices: ['chrome', 'chrome_headless','edge','firefox','safari'], 
             description: 'Select the Maven profile / test suite to execute'
         )
     }
