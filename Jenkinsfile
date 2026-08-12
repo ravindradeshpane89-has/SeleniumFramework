@@ -14,6 +14,7 @@ pipeline {
             choices: ['chrome', 'chrome_headless','edge','firefox','safari'], 
             description: 'Select the Maven profile / test suite to execute'
         )
+       booleanParam(name: 'DRY_RUN', defaultValue: false, description: 'Check to only update/pull code without building')
     }
 
     tools {
@@ -31,6 +32,9 @@ pipeline {
         }
 
         stage('Execute TestNG Tests') {
+          when {
+                expression { return !params.DRY_RUN }
+            }
             steps {
                 script {
                     echo "Executing TestNG tests using profile: ${params.MAVEN_PROFILE}"
