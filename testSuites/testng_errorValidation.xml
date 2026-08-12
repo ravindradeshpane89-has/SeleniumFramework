@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<groups>
+<run>
+<include name="errorValidation"></include>
+</run>
+</groups>
+<listeners>
+<listener class-name="listerners.Listeners"></listener>
+</listeners>
+  <test thread-count="5" name="LoginPageTest">
+    <classes>
+      <class name="test.LoginPageTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="CartPageTest" thread-count="5">
+  <classes>
+  <class name="test.CartPageTest"/>
+  </classes>
+  </test>
+  <test name="SummaryPageTest" thread-count ="5">
+  <classes>
+    <class name="test.SummaryPageTest"/>
+  </classes>
+  </test> 
+</suite> <!-- Suite -->
