@@ -61,7 +61,7 @@ public class Utils {
 		File src=ts.getScreenshotAs(OutputType.FILE);
 		File target = new File(System.getProperty("user.dir")+"/reports/"+testName+".png");
 		FileUtils.copyFile(src, target);
-		return System.getProperty("user.dir")+"/reports/"+testName+".png";
+		return "/reports/"+testName+".png";
 	}
 
 	public Actions moveToElement(WebElement el) {
