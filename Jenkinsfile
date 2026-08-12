@@ -51,7 +51,7 @@ pipeline {
                 allowMissing: false,
                 alwaysLinkToLastBuild: true,
                 keepAll: true,
-                reportDir: 'reports',
+                reportDir: 'reports/',
                 reportFiles: 'index.html',
                 reportName: 'Extent Report'
             ])
