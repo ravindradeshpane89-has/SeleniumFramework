@@ -30,9 +30,9 @@ public class BaseTest {
 			break;
 		case "chrome_headless":
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments("headless");
+			options.addArguments("--headless=new");
+			options.addArguments("--window-size=1920,1080");			
 			driver = new ChromeDriver(options);
-			driver.manage().window().setSize(new Dimension(1440, 900));
 			tDriver.set(driver);
 			break;
 		case "firefox":
