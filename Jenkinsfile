@@ -5,14 +5,14 @@ pipeline {
         // Dropdown parameter allowing the user to select the Maven Profile
         choice(
             name: 'MAVEN_PROFILE', 
-            choices: ['Regression', 'ErrorValidation','DataDriven'], 
+            choices: ['Regression', 'ErrorValidation','DataDriven','Remote'], 
             description: 'Select the Maven profile / test suite to execute'
         )
 
          choice(
             name: 'Browser', 
-            choices: ['chrome', 'chrome_headless','edge','firefox','safari'], 
-            description: 'Select the Maven profile / test suite to execute'
+            choices: ['chrome', 'chrome_headless','edge','firefox','safari','NA'], 
+            description: 'Select the Maven profile / test suite to execute.In case of Remote profile,select browser as NA as it will internally handled '
         )
        booleanParam(name: 'DRY_RUN', defaultValue: false, description: 'Check to only update/pull code without building')
     }
@@ -46,10 +46,14 @@ stage('Fix Extent Report Display') {
             steps {
                 script {
                     echo "Executing TestNG tests using profile: ${params.MAVEN_PROFILE}"
-                    
-                    // Runs the selected profile using the -P flag
+                    if(${params.MAVEN_PROFILE} == 'Remote'){
+                    bat "mvn clean test -P${params.MAVEN_PROFILE}
+                    }
+                    else{
+                     // Runs the selected profile using the -P flag
                     // Use 'bat' instead of 'sh' if your Jenkins agent runs on Windows
                     bat "mvn clean test -P${params.MAVEN_PROFILE} -Dbrowser=${params.Browser}"
+                     }
                 }
             }
         }

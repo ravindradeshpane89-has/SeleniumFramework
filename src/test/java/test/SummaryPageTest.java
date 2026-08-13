@@ -1,10 +1,14 @@
 package test;
 
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import pageObjects.CartPage;
@@ -23,11 +27,17 @@ public class SummaryPageTest extends BaseTest{
 	private PersonalInfoPage personalInfo;
 	private SummaryPage summaryPage;
 	
+	@Parameters({"browser"})
 	@BeforeMethod
-	public void launchUrl() {
-		
-		String browser = getProperty("browser");
-		setupDriver(browser);
+	public void launchUrl(String browserName) throws MalformedURLException, URISyntaxException {
+		String profile = getProperty("active.profile");
+		if(profile.equalsIgnoreCase("Remote")) {
+			setUpRemoteDriver(browserName, System.getProperty("hub_url"));
+		}
+		else {
+			String browser = getProperty("browser");
+	    	setupDriver(browser);
+		}
 	    this.driver = BaseTest.getDriver();
 		loginPage = launchUrl(this.driver);
 	}
