@@ -43,7 +43,7 @@ public class LoginPageTest extends BaseTest {
     	loginPage.enterpassword("Selenium1@");
     	loginPage.loginToApp();
     	loginPage.waitForVisibilityOfElement(loginPage.getErrorLoginMsg(), 5);
-    	Assert.assertEquals(loginPage.getErrorLoginMsgText().trim(), "Incorrect emai or password.");
+    	Assert.assertEquals(loginPage.getErrorLoginMsgText().trim(), "Incorrect email or password.");
     }
     
     @AfterMethod(alwaysRun = true)
