@@ -27,7 +27,7 @@ pipeline {
 stage('Fix Extent Report Display') {
     steps {
         script {
-            System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox allow-scripts; default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data:;")
+            System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "")
         }
     }
 }
