@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -41,6 +42,17 @@ public class Utils {
 			e.printStackTrace();
 		}
 
+	}
+	
+	public void waitForElementToBeClickable(WebElement el,long waitTime) {
+		wait = new WebDriverWait(driver, Duration.ofSeconds(waitTime));
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(el));
+		} catch (ElementClickInterceptedException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void waitForInvisibilityOfElement(WebElement el, long waitTime) {

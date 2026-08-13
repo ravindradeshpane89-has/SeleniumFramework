@@ -56,7 +56,10 @@ public class BaseTest {
 			System.out.println("Invalid browser");
 
 		}
-		getDriver().manage().window().maximize();
+		if(!browser.equalsIgnoreCase("chrome_headless")) {
+			getDriver().manage().window().maximize();
+		}
+		
 		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 	
