@@ -29,6 +29,7 @@ public class LoginPageTest extends BaseTest {
     
     @Test
     public void loginSuccessTest() {
+    	System.out.println("Login Success Test Started");
     	loginPage.enterUserName("ravi.d@hotmail.com");
 		loginPage.enterpassword("Selenium1@3");
 		homePage = loginPage.loginToApp();
