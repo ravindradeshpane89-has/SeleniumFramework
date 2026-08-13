@@ -47,7 +47,7 @@ stage('Fix Extent Report Display') {
                 script {
                     echo "Executing TestNG tests using profile: ${params.MAVEN_PROFILE}"
                     if(${params.MAVEN_PROFILE} == "Remote"){
-                    bat "mvn clean test -P${params.MAVEN_PROFILE}
+                    bat "mvn clean test -P${params.MAVEN_PROFILE}"
                     }
                     else{
                      // Runs the selected profile using the -P flag
