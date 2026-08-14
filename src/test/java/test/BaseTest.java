@@ -3,65 +3,50 @@ package test;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.time.Duration;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.safari.SafariDriver;
 
+import driverManager.WebDriverFactory;
 import pageObjects.LoginPage;
 
 public class BaseTest {
 
 	private static ThreadLocal<WebDriver> tDriver = new ThreadLocal<>();
-	WebDriver driver;
+	private WebDriverFactory factory = new WebDriverFactory();
 
-	public void setupDriver(String browser) {
-
-		switch (browser) {
-
-		case "chrome":
-			driver = new ChromeDriver();
-			tDriver.set(driver);
-			break;
-		case "chrome_headless":
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--headless=new");
-			options.addArguments("--window-size=1920,1080");	
-			options.addArguments("--disable-gpu");
-			options.addArguments("--no-sandbox");
-			options.addArguments("--disable-dev-shm-usage");
-			driver = new ChromeDriver(options);
-			tDriver.set(driver);
-			break;
-		case "firefox":
-		  driver = new FirefoxDriver();
-			tDriver.set(driver);
-			break;
-
-		case "edge":
-			driver = new EdgeDriver();
-			tDriver.set(driver);
-			break;
-		case "safari":
-			driver = new SafariDriver();
-			tDriver.set(driver);
-			break;
-
-		default:
-			System.out.println("Invalid browser");
-
+	
+	public void setupDriver(String browser,String profile) throws MalformedURLException, URISyntaxException {
+		
+		if(profile!=null && profile.equalsIgnoreCase("Remote")) {
+			tDriver.set(factory.createDriver("REMOTE").setDriver(browser));
 		}
+		else {
+			switch (browser) {
+
+			case "chrome":
+				tDriver.set(factory.createDriver("CHROME").setDriver(browser));
+				break;
+			case "chrome_headless":
+				tDriver.set(factory.createDriver("CHROME").setDriver(browser));
+				break;
+			case "firefox":
+				tDriver.set(factory.createDriver("FIREFOX").setDriver(browser));
+				break;
+			case "edge":
+				tDriver.set(factory.createDriver("EDGE").setDriver(browser));
+				break;
+			case "safari":
+				tDriver.set(factory.createDriver("SAFARI").setDriver(browser));
+				break;
+			default:
+				throw new IllegalArgumentException("Invalid Browser: "+browser);
+
+			}
+		}
+		
 		if(!browser.equalsIgnoreCase("chrome_headless")) {
 			getDriver().manage().window().maximize();
 		}
@@ -69,45 +54,11 @@ public class BaseTest {
 		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 	
+	
+	
 	public static WebDriver getDriver() {
 		return tDriver.get();
 	}
-	
-	public void setUpRemoteDriver(String browser, String hub_url) throws MalformedURLException, URISyntaxException {
-		
-		switch (browser.toLowerCase()) {
-        case "chrome":
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless=new");
-			options.addArguments("--window-size=1920,1080");	
-			options.addArguments("--disable-gpu");
-			options.addArguments("--no-sandbox");
-			options.addArguments("--disable-dev-shm-usage");
-			driver = new ChromeDriver(options);   // Run in headless mode
-            tDriver.set(new RemoteWebDriver(new URI(hub_url).toURL(), options));
-            break;
-
-        case "firefox":
-            FirefoxOptions firefoxOptions = new FirefoxOptions();
-            firefoxOptions.addArguments("-private");         // Open in private mode
-            tDriver.set(new RemoteWebDriver(new URI(hub_url).toURL(), firefoxOptions));
-            break;
-
-        case "edge":
-            EdgeOptions edgeOptions = new EdgeOptions();
-            edgeOptions.addArguments("--inprivate");         // Open Edge InPrivate
-            tDriver.set(new RemoteWebDriver(new URI(hub_url).toURL(), edgeOptions));
-            break;
-
-        default:
-            throw new IllegalArgumentException("Unsupported browser: " + browser);
-    }
-		if(!browser.equalsIgnoreCase("chrome")) {
-			getDriver().manage().window().maximize();
-		}
-		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		
-}
 
 	public String getProperty(String property) {
 

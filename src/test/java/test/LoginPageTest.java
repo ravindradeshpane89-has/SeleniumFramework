@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -24,14 +25,14 @@ public class LoginPageTest extends BaseTest {
 
 	@Parameters({"browser"})
     @BeforeMethod(alwaysRun = true)
-	public void launchUrl(String browserName) throws MalformedURLException, URISyntaxException {
+	public void launchUrl(@Optional("Chrome")String browserName) throws MalformedURLException, URISyntaxException {
 		String profile = getProperty("active.profile");
-		if(profile.equalsIgnoreCase("Remote")) {
-			setUpRemoteDriver(browserName, System.getProperty("hub_url"));
+		if(profile!=null && profile.equalsIgnoreCase("Remote")) {
+			setupDriver(browserName,profile);
 		}
 		else {
 			String browser = getProperty("browser");
-	    	setupDriver(browser);
+	    	setupDriver(browser,null);
 		}
     	
 		this.driver = BaseTest.getDriver();
