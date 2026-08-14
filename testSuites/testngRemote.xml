@@ -5,7 +5,7 @@
 <listener class-name="listerners.Listeners"></listener>
 </listeners>
   <test name="LoginPageTest">
-  <parameter name="browser" value="chrome" />
+  <parameter name="browser" value="chrome_headless" />
     <classes>
       <class name="test.LoginPageTest"/>
     </classes>

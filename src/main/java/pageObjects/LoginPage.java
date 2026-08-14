@@ -1,5 +1,7 @@
 package pageObjects;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import utils.Utils;
 
 public class LoginPage extends Utils {
+	private static final Logger logger = LogManager.getLogger(LoginPage.class);
 	
 	private  WebDriver driver;
 	
@@ -27,6 +30,7 @@ public class LoginPage extends Utils {
 	public LoginPage(WebDriver driver){
 		super(driver);
 		this.driver =driver;
+		logger.info("Initializing web elements of "+this.getClass());
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -39,6 +43,7 @@ public class LoginPage extends Utils {
 	}
 	
 	public HomePage loginToApp() {
+		logger.info("Logging into the application");
 		login.click();
 		return new HomePage(driver);
 	}

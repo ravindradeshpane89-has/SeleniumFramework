@@ -6,6 +6,8 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -23,6 +25,7 @@ import dataUtils.DataUtils;
 import pageObjects.CartPage;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
+import pageObjects.SummaryPage;
 
 public class CartPageTest extends BaseTest {
 	
@@ -30,16 +33,19 @@ public class CartPageTest extends BaseTest {
 	private LoginPage loginPage;
 	private HomePage homePage;
 	private CartPage cartPage;
+	private static final Logger logger = LogManager.getLogger(CartPageTest.class);
 	
 	@Parameters({"browser"})
 	@BeforeMethod(alwaysRun = true)
 	public void launchUrl(@Optional("Chrome") String browserName) throws MalformedURLException, URISyntaxException {
 		String profile = getProperty("active.profile");
 		if(profile!=null && profile.equalsIgnoreCase("Remote")) {
+			logger.info("Setting Up Remote Web Driver of browser "+browserName+" for "+this.getClass());
 			setupDriver(browserName,profile);
 		}
 		else {
 			String browser = getProperty("browser");
+			logger.info("Setting Up Web Driver of browser "+browser+" for "+this.getClass());
 	    	setupDriver(browser,null);
 		}
 		this.driver = BaseTest.getDriver();
@@ -49,7 +55,9 @@ public class CartPageTest extends BaseTest {
 	
 	@Test(dataProvider = "getData",groups = {"dataDrivenTests"})
 	public void addToCartTest(Map<String,String> data) throws InterruptedException {
+		logger.info("Entering username as "+data.get("email"));
 		loginPage.enterUserName(data.get("email"));
+		logger.info("Entering password as "+data.get("password"));
 		loginPage.enterpassword(data.get("password"));
 		homePage=loginPage.loginToApp();
 		WebElement reqProduct = homePage.getProduct(data.get("product"), 5);

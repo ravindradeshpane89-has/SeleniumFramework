@@ -2,6 +2,8 @@ package listerners;
 
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -21,6 +23,7 @@ public class Listeners implements ITestListener {
 	private WebDriver driver;
 	private Utils util;
 	private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
+	 private static final Logger logger = LogManager.getLogger(Listeners.class);
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
@@ -34,17 +37,21 @@ public class Listeners implements ITestListener {
 
 		test = extent.createTest(result.getMethod().getMethodName());
 		extentTest.set(test);
+		logger.info("Test: "+result.getMethod().getMethodName()+" started with thread "+Thread.currentThread().threadId());
+		
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		extentTest.get().log(Status.PASS, "Test Passed");
+		logger.info("Test :"+result.getMethod().getMethodName()+" with thread "+Thread.currentThread().threadId()+" is successful");
 
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 		extentTest.get().log(Status.FAIL, result.getThrowable());
+		logger.info("Test :"+result.getMethod().getMethodName()+" with thread "+Thread.currentThread().threadId()+" is failed");
 		String filePath = null;
 		try {
 			java.lang.reflect.Field field = result.getTestClass().getRealClass().getDeclaredField("driver");

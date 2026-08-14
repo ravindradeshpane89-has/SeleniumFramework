@@ -1,0 +1,91 @@
+2026-08-14 11:41:42 [main] INFO  test.LoginPageTest - Setting Up Web Driver of browser chrome for class test.LoginPageTest
+2026-08-14 11:41:45 [main] INFO  test.BaseTest - WebDriver with browser chrome is initialized with thread 1
+2026-08-14 11:41:45 [main] INFO  test.BaseTest - launching the url
+2026-08-14 11:41:48 [main] INFO  pageObjects.LoginPage - Initializing web elements of class pageObjects.LoginPage
+2026-08-14 11:41:48 [main] INFO  listerners.Listeners - Test: errorLoginTest started with thread 1
+2026-08-14 11:41:48 [main] INFO  pageObjects.LoginPage - Logging into the application
+2026-08-14 11:41:48 [main] INFO  pageObjects.HomePage - Initializing web elements for class pageObjects.HomePage
+2026-08-14 11:41:48 [main] INFO  utils.Utils - waiting for visisbility of web element [[ChromeDriver: chrome on windows (88dd204ffb553bf9366c3ab4542ab115)] -> css selector: div[aria-label*='Incorrect']] for 5 sec
+2026-08-14 11:41:49 [main] INFO  listerners.Listeners - Test :errorLoginTest with thread 1 is successful
+2026-08-14 11:41:49 [main] INFO  test.BaseTest - closing the driver instance
+2026-08-14 11:45:23 [TestNG-tests-2] INFO  dataUtils.DataUtils - Reteriving the data from file cartPageTestData
+2026-08-14 11:45:23 [TestNG-tests-1] INFO  test.LoginPageTest - Setting Up Web Driver of browser chrome for class test.LoginPageTest
+2026-08-14 11:45:23 [TestNG-tests-3] INFO  test.SummaryPageTest - Setting Up Web Driver of browser chrome for class test.SummaryPageTest
+2026-08-14 11:45:24 [TestNG-tests-2] INFO  test.CartPageTest - Setting Up Web Driver of browser chrome for class test.CartPageTest
+2026-08-14 11:45:29 [TestNG-tests-1] INFO  test.BaseTest - WebDriver with browser chrome is initialized with thread 28
+2026-08-14 11:45:29 [TestNG-tests-1] INFO  test.BaseTest - launching the url
+2026-08-14 11:45:30 [TestNG-tests-3] INFO  test.BaseTest - WebDriver with browser chrome is initialized with thread 30
+2026-08-14 11:45:30 [TestNG-tests-2] INFO  test.BaseTest - WebDriver with browser chrome is initialized with thread 29
+2026-08-14 11:45:30 [TestNG-tests-1] INFO  pageObjects.LoginPage - Initializing web elements of class pageObjects.LoginPage
+2026-08-14 11:45:30 [TestNG-tests-1] INFO  listerners.Listeners - Test: errorLoginTest started with thread 28
+2026-08-14 11:45:30 [TestNG-tests-2] INFO  test.BaseTest - launching the url
+2026-08-14 11:45:30 [TestNG-tests-3] INFO  test.BaseTest - launching the url
+2026-08-14 11:45:33 [TestNG-tests-3] INFO  pageObjects.LoginPage - Initializing web elements of class pageObjects.LoginPage
+2026-08-14 11:45:33 [TestNG-tests-3] INFO  listerners.Listeners - Test: orderSuccessTest started with thread 30
+2026-08-14 11:45:33 [TestNG-tests-1] INFO  pageObjects.LoginPage - Logging into the application
+2026-08-14 11:45:34 [TestNG-tests-1] INFO  pageObjects.HomePage - Initializing web elements for class pageObjects.HomePage
+2026-08-14 11:45:34 [TestNG-tests-3] INFO  pageObjects.LoginPage - Logging into the application
+2026-08-14 11:45:34 [TestNG-tests-1] INFO  utils.Utils - waiting for visisbility of web element [[ChromeDriver: chrome on windows (475941cb433b2e69fb09aceb65fa2394)] -> css selector: div[aria-label*='Incorrect']] for 5 sec
+2026-08-14 11:45:34 [TestNG-tests-1] INFO  listerners.Listeners - Test :errorLoginTest with thread 28 is successful
+2026-08-14 11:45:34 [TestNG-tests-1] INFO  test.BaseTest - closing the driver instance
+2026-08-14 11:45:34 [TestNG-tests-3] INFO  pageObjects.HomePage - Initializing web elements for class pageObjects.HomePage
+2026-08-14 11:45:35 [TestNG-tests-3] INFO  utils.Utils - waiting for visisbility of web element [[ChromeDriver: chrome on windows (acc964b3d16940c8c7ea4018043797e7)] -> css selector: #sidebar b] for 5 sec
+2026-08-14 11:45:35 [TestNG-tests-3] INFO  pageObjects.HomePage - Getting Required product having product Name ZARA COAT 3 from class pageObjects.HomePage
+2026-08-14 11:45:35 [TestNG-tests-3] INFO  pageObjects.HomePage - Adding product [[ChromeDriver: chrome on windows (acc964b3d16940c8c7ea4018043797e7)] -> css selector: .row .card] to cart
+2026-08-14 11:45:35 [TestNG-tests-3] INFO  utils.Utils - waiting for visisbility of web element [[ChromeDriver: chrome on windows (acc964b3d16940c8c7ea4018043797e7)] -> id: toast-container] for 5 sec
+2026-08-14 11:45:35 [TestNG-tests-2] INFO  pageObjects.LoginPage - Initializing web elements of class pageObjects.LoginPage
+2026-08-14 11:45:35 [TestNG-tests-2] INFO  listerners.Listeners - Test: addToCartTest started with thread 29
+2026-08-14 11:45:35 [TestNG-tests-2] INFO  test.CartPageTest - Entering username as Rav.des@gmail.com
+2026-08-14 11:45:35 [TestNG-tests-2] INFO  test.CartPageTest - Entering password as Selenium1@3
+2026-08-14 11:45:35 [TestNG-tests-2] INFO  pageObjects.LoginPage - Logging into the application
+2026-08-14 11:45:36 [TestNG-tests-2] INFO  pageObjects.HomePage - Initializing web elements for class pageObjects.HomePage
+2026-08-14 11:45:36 [TestNG-tests-2] INFO  utils.Utils - waiting for visisbility of web element [[ChromeDriver: chrome on windows (6acdc624c03e3dff856e76b68329c1c1)] -> css selector: #sidebar b] for 5 sec
+2026-08-14 11:45:36 [TestNG-tests-2] INFO  pageObjects.HomePage - Getting Required product having product Name ZARA COAT 3 from class pageObjects.HomePage
+2026-08-14 11:45:36 [TestNG-tests-2] INFO  pageObjects.HomePage - Adding product [[ChromeDriver: chrome on windows (6acdc624c03e3dff856e76b68329c1c1)] -> css selector: .row .card] to cart
+2026-08-14 11:45:37 [TestNG-tests-1] INFO  test.LoginPageTest - Setting Up Web Driver of browser chrome for class test.LoginPageTest
+2026-08-14 11:45:37 [TestNG-tests-2] INFO  utils.Utils - waiting for visisbility of web element [[ChromeDriver: chrome on windows (6acdc624c03e3dff856e76b68329c1c1)] -> id: toast-container] for 5 sec
+2026-08-14 11:45:37 [TestNG-tests-3] INFO  pageObjects.HomePage - clicking on cart tab
+2026-08-14 11:45:37 [TestNG-tests-3] INFO  pageObjects.CartPage - Initializing web elements for class pageObjects.CartPage
+2026-08-14 11:45:37 [TestNG-tests-3] INFO  pageObjects.CartPage - clicking on personal info page
+2026-08-14 11:45:37 [TestNG-tests-3] INFO  pageObjects.PersonalInfoPage - Initializing web elements of class pageObjects.PersonalInfoPage
+2026-08-14 11:45:37 [TestNG-tests-3] INFO  pageObjects.PersonalInfoPage - Entering the country Ind on personal info page
+2026-08-14 11:45:38 [TestNG-tests-3] INFO  utils.Utils - Moving to web element [[ChromeDriver: chrome on windows (acc964b3d16940c8c7ea4018043797e7)] -> css selector: input[placeholder='Select Country']]
+2026-08-14 11:45:39 [TestNG-tests-2] INFO  pageObjects.HomePage - clicking on cart tab
+2026-08-14 11:45:39 [TestNG-tests-1] INFO  test.BaseTest - WebDriver with browser chrome is initialized with thread 28
+2026-08-14 11:45:40 [TestNG-tests-3] INFO  utils.Utils - waiting for visisbility of web element [[ChromeDriver: chrome on windows (acc964b3d16940c8c7ea4018043797e7)] -> css selector: .ta-results] for 5 sec
+2026-08-14 11:45:40 [TestNG-tests-1] INFO  test.BaseTest - launching the url
+2026-08-14 11:45:42 [TestNG-tests-3] INFO  utils.Utils - Moving to web element [[ChromeDriver: chrome on windows (acc964b3d16940c8c7ea4018043797e7)] -> xpath: //span[text()=' India']]
+2026-08-14 11:45:44 [TestNG-tests-2] INFO  pageObjects.CartPage - Initializing web elements for class pageObjects.CartPage
+2026-08-14 11:45:44 [TestNG-tests-1] INFO  pageObjects.LoginPage - Initializing web elements of class pageObjects.LoginPage
+2026-08-14 11:45:44 [TestNG-tests-1] INFO  listerners.Listeners - Test: loginSuccessTest started with thread 28
+2026-08-14 11:45:44 [TestNG-tests-3] INFO  pageObjects.PersonalInfoPage - Submitting the details on personal info page
+2026-08-14 11:45:45 [TestNG-tests-2] INFO  pageObjects.CartPage - Product with product name ZARA COAT 3 is present on cartPage true
+2026-08-14 11:45:45 [TestNG-tests-2] INFO  listerners.Listeners - Test :addToCartTest with thread 29 is successful
+2026-08-14 11:45:45 [TestNG-tests-2] INFO  test.BaseTest - closing the driver instance
+2026-08-14 11:45:46 [TestNG-tests-1] INFO  pageObjects.LoginPage - Logging into the application
+2026-08-14 11:45:46 [TestNG-tests-1] INFO  pageObjects.HomePage - Initializing web elements for class pageObjects.HomePage
+2026-08-14 11:45:46 [TestNG-tests-3] INFO  pageObjects.SummaryPage - Initializing web elements of class pageObjects.SummaryPage
+2026-08-14 11:45:46 [TestNG-tests-3] INFO  pageObjects.SummaryPage - Getting success order message from Summary Page
+2026-08-14 11:45:46 [TestNG-tests-1] INFO  utils.Utils - waiting for visisbility of web element [[ChromeDriver: chrome on windows (21dcf63b517f95e5a7269e14d87e8e45)] -> xpath: //button[contains(text(),'Sign Out')]] for 5 sec
+2026-08-14 11:45:47 [TestNG-tests-3] INFO  listerners.Listeners - Test :orderSuccessTest with thread 30 is successful
+2026-08-14 11:45:47 [TestNG-tests-3] INFO  test.BaseTest - closing the driver instance
+2026-08-14 11:45:47 [TestNG-tests-1] INFO  listerners.Listeners - Test :loginSuccessTest with thread 28 is successful
+2026-08-14 11:45:47 [TestNG-tests-1] INFO  test.BaseTest - closing the driver instance
+2026-08-14 11:45:50 [TestNG-tests-2] INFO  test.CartPageTest - Setting Up Web Driver of browser chrome for class test.CartPageTest
+2026-08-14 11:45:53 [TestNG-tests-2] INFO  test.BaseTest - WebDriver with browser chrome is initialized with thread 29
+2026-08-14 11:45:53 [TestNG-tests-2] INFO  test.BaseTest - launching the url
+2026-08-14 11:45:57 [TestNG-tests-2] INFO  pageObjects.LoginPage - Initializing web elements of class pageObjects.LoginPage
+2026-08-14 11:45:57 [TestNG-tests-2] INFO  listerners.Listeners - Test: addToCartTest started with thread 29
+2026-08-14 11:45:57 [TestNG-tests-2] INFO  test.CartPageTest - Entering username as ravi.d@hotmail.com
+2026-08-14 11:45:57 [TestNG-tests-2] INFO  test.CartPageTest - Entering password as Selenium1@3
+2026-08-14 11:45:57 [TestNG-tests-2] INFO  pageObjects.LoginPage - Logging into the application
+2026-08-14 11:45:57 [TestNG-tests-2] INFO  pageObjects.HomePage - Initializing web elements for class pageObjects.HomePage
+2026-08-14 11:45:58 [TestNG-tests-2] INFO  utils.Utils - waiting for visisbility of web element [[ChromeDriver: chrome on windows (11fc6f1101c236c68f2a0d942559584f)] -> css selector: #sidebar b] for 5 sec
+2026-08-14 11:45:58 [TestNG-tests-2] INFO  pageObjects.HomePage - Getting Required product having product Name ADIDAS ORIGINAL from class pageObjects.HomePage
+2026-08-14 11:45:58 [TestNG-tests-2] INFO  pageObjects.HomePage - Adding product [[ChromeDriver: chrome on windows (11fc6f1101c236c68f2a0d942559584f)] -> css selector: .row .card] to cart
+2026-08-14 11:45:58 [TestNG-tests-2] INFO  utils.Utils - waiting for visisbility of web element [[ChromeDriver: chrome on windows (11fc6f1101c236c68f2a0d942559584f)] -> id: toast-container] for 5 sec
+2026-08-14 11:46:00 [TestNG-tests-2] INFO  pageObjects.HomePage - clicking on cart tab
+2026-08-14 11:46:00 [TestNG-tests-2] INFO  pageObjects.CartPage - Initializing web elements for class pageObjects.CartPage
+2026-08-14 11:46:01 [TestNG-tests-2] INFO  pageObjects.CartPage - Product with product name ADIDAS ORIGINAL is present on cartPage true
+2026-08-14 11:46:01 [TestNG-tests-2] INFO  listerners.Listeners - Test :addToCartTest with thread 29 is successful
+2026-08-14 11:46:01 [TestNG-tests-2] INFO  test.BaseTest - closing the driver instance

@@ -3,6 +3,8 @@ package test;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -27,16 +29,19 @@ public class SummaryPageTest extends BaseTest{
 	private CartPage cartPage;
 	private PersonalInfoPage personalInfo;
 	private SummaryPage summaryPage;
+	private static final Logger logger = LogManager.getLogger(SummaryPageTest.class);
 	
 	@Parameters({"browser"})
 	@BeforeMethod
 	public void launchUrl(@Optional("Chrome")String browserName) throws MalformedURLException, URISyntaxException {
 		String profile = getProperty("active.profile");
 		if(profile!=null && profile.equalsIgnoreCase("Remote")) {
+			logger.info("Setting Up Remote Web Driver of browser "+browserName+" for "+this.getClass());
 			setupDriver(browserName,profile);
 		}
 		else {
 			String browser = getProperty("browser");
+			logger.info("Setting Up Web Driver of browser "+browser+" for "+this.getClass());
 	    	setupDriver(browser,null);
 		}
 	    this.driver = BaseTest.getDriver();
